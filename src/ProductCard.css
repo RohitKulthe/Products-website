@@ -1,0 +1,266 @@
+.product-card {
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 16px;
+  width: 240px;
+  text-align: left;
+  position: relative;
+  background: white;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 20px;
+  z-index: 2;
+  letter-spacing: 0.5px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+.product-image-container {
+  position: relative;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(45deg, #f8fafc, #e2e8f0);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  transition: all 0.5s ease;
+  transform: scale(0.95);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05) rotate(2deg);
+  filter: brightness(1.05);
+}
+
+/* Add floating animation to image */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(0.95);
+  }
+  50% {
+    transform: translateY(-5px) scale(0.96);
+  }
+}
+
+.product-image {
+  animation: float 3s ease-in-out infinite;
+}
+
+.product-card:hover .product-image {
+  animation: none;
+}
+
+.wishlist-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 18px;
+  color: #666;
+  transition: all 0.3s ease;
+  z-index: 2;
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.product-card:hover .wishlist-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.wishlist-btn:hover {
+  background: #2563eb;
+  color: white;
+  transform: scale(1.1) rotate(180deg);
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 12px 0 8px;
+  height: auto;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .product-title {
+  color: #2563eb;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.stars {
+  color: #fbbf24;
+  font-size: 16px;
+  letter-spacing: -1px;
+}
+
+.rating-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.reviews {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.product-pricing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 8px 0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.current-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -0.5px;
+}
+
+.original-price {
+  font-size: 14px;
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+.discount {
+  font-size: 13px;
+  font-weight: 700;
+  color: #10b981;
+  background: #d1fae5;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.emi-badge {
+  background: linear-gradient(90deg, #eff6ff, #dbeafe);
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .emi-badge {
+  background: linear-gradient(90deg, #dbeafe, #bfdbfe);
+  transform: translateX(5px);
+}
+
+.emi-badge::before {
+  content: "✓";
+  font-weight: bold;
+  color: #10b981;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-to-cart-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.add-to-cart-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+}
+
+.add-to-cart-btn:active::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(40, 40);
+    opacity: 0;
+  }
+}
